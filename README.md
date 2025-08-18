@@ -12,5 +12,5 @@ Includes minimal styling for easy customization or embedding.
 
 This project uses:
 
-- csv-to-html-table (loaded via CDN)
+- csv-to-html-table (https://github.com/derekeder/csv-to-html-table)
 - jQuery and DataTables (automatically included by the plugin)
