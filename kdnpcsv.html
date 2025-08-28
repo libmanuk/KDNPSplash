@@ -1,261 +1,268 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Kentucky Digital Newspapers</title>
-<style>
-    body {background-color: #f3f3f3 !important;}
-    /* #Map, #genre_list {display:none;} */
-</style>
-                                
-</head>
-<body>
-<!-- primo front page start -->
+    <title>Kentucky Digital Newspapers</title>
+    <style>
+        body {
+            background-color: #f3f3f3 !important;
+        }
+        /* #Map, #genre_list {display:none;} */
+    </style>
 
-<div id="tite_container" style="max-width:100% !important;margin-left:auto;margin-right:auto;"><h3 style="padding:0px 0px 0px 0px !important;display:none;">Kentucky Digital Newspapers</h3></div>  
-<div id="date-search-container" style="max-width:100% !important;margin-left:auto;margin-right:auto;">
-
-  <div class="tab-container">
-    <a href="about.html" class="tab">About</a>
-    <a href="kdnpcsv.html" class="tab active">Collections</a>
-    <a href="contribute.html" class="tab">Contribute</a>
-    <a href="resources.html" class="tab">Resources</a>
-  </div>
-
-<div id="inline" class="lity-hide" style="max-height: 1009px;">
-<script>
-function process()
-{
-// var baseurl = 'https://saalck-uky.primo.exlibrisgroup.com/discovery/';
-var baseurl = 'https://sandbox01-na.primo.exlibrisgroup.com/discovery/';
-if (document.getElementById("year").value && document.getElementById("month").value && document.getElementById("day").value) {
-//    var url=baseurl + 'search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds09,include,' + document.getElementById("year").value + '&facet=lds12,include,' + document.getElementById("month").value + '&facet=lds32,include,' + document.getElementById("day").value + '&lang=en&offset=0';
-    var url=baseurl + 'search?query=lds06,exact,' + document.getElementById("year").value + '-' + document.getElementById("month").value + '-' + document.getElementById("day").value +'&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&offset=0';
-parent.location.href=url;
-} else if (document.getElementById("year").value && document.getElementById("month").value) {
-//    var url=baseurl + 'search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds09,include,' + document.getElementById("year").value + '&facet=lds12,include,' + document.getElementById("month").value + '&lang=en&offset=0';
-//parent.location.href=url;
-    var url=baseurl + 'search?query=lds06,exact,' + document.getElementById("year").value + '-' + document.getElementById("month").value + '&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&offset=0';
-parent.location.href=url;
-} else if (document.getElementById("month").value && document.getElementById("day").value) {
-//    var url=baseurl + 'search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds12,include,' + document.getElementById("month").value + '&facet=lds32,include,' + document.getElementById("day").value + '&lang=en&offset=0';
-//parent.location.href=url;
-    var url=baseurl + 'search?query=lds06,exact,-' + document.getElementById("month").value + '-' + document.getElementById("day").value +'&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&offset=0';
-parent.location.href=url;
-} else if (document.getElementById("year").value &&  document.getElementById("day").value) {
-document.getElementById("error").style.display = "block";    
-document.getElementById("error").innerHTML = "invalid search, please supply a month";
-} else if
- (document.getElementById("day").value) {
-document.getElementById("error").style.display = "block"; 
-document.getElementById("error").innerHTML = "invalid search, please supply a month or month and year";
-} else if (document.getElementById("year").value) {
-//    var url=baseurl + 'search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds09,include,' + document.getElementById("year").value + '&lang=en&offset=0';
-//parent.location.href=url;
-    var url=baseurl + 'search?query=lds06,exact,' + document.getElementById("year").value + '-&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&offset=0';
-parent.location.href=url;
-} else {
-//    var url=baseurl + 'search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds09,include,' + document.getElementById("year").value + '&facet=lds12,include,' + document.getElementById("month").value + '&facet=lds32,include,' + document.getElementById("day").value + '&lang=en&offset=0';
-    var url=baseurl + 'search?query=lds06,exact,' + document.getElementById("year").value + '-' + document.getElementById("month").value + '-' + document.getElementById("day").value +'&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&offset=0';
-parent.location.href=url;
-}
-return false;
-}
-</script>
-
-
-<p id="error"></p>
-<h4>Search a Date (digital issues):</h4>
-<form style="padding:10px;border-bottom: 2px solid #dee2e6;" target="_parent" onsubmit="return process();">
-<span style="color:#fff;"></span> <input type="text" name="year" id="year" placeholder=" enter a year">
-<span style="color:#fff;"></span>
-<select name="month" id="month" style="padding:2.5px;">
-<option value="" disabled="disabled" selected="selected">select month</option>
-<option value="01">January</option>
-<option value="02">February</option>
-<option value="03">March</option>
-<option value="04">April</option>
-<option value="05">May</option>
-<option value="06">June</option>
-<option value="07">July</option>
-<option value="08">August</option>
-<option value="09">September</option>
-<option value="10">October</option>
-<option value="11">November</option>
-<option value="12">December</option>
-</select>
-<span style="color:#fff;"></span>
-<select name="day" id="day" style="padding:2.5px;">
-<option value="" disabled="disabled" selected="selected">select day</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-</select>
-
-&nbsp;&nbsp;<input type="submit" value="Search for Date" class="button-15" target="_parent">
-
-</form>
-<script>
-function clrFunction() {
-  document.getElementById("error").style.display = "none"; ;
-}
-</script>
-
-    </div>  
-<h4>Browse Digital Titles:</h4>
-<br/>
-</div>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
+          crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://kentuckynewspapers.org/primo/css/custom.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- JavaScript Dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kentuckynewspapers.org/primo/js/jquery.csv.min.js"></script>
-    <!--<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
-    <script src="https://kentuckynewspapers.org/primo/js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.csv.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+    <script src="js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://kentuckynewspapers.org/primo/js/csv_to_html_table.js"></script>
+    <script src="js/csv_to_html_table.js"></script>
+</head>
+<body>
 
+<!-- primo front page start -->
+<div id="tite_container" style="max-width:100% !important;margin-left:auto;margin-right:auto;"><h3 style="padding:0px 0px 0px 0px !important;display:none;">Kentucky Digital Newspapers</h3></div>  
+<div id="date-search-container" style="max-width:100% !important;margin-left:auto;margin-right:auto;">
+    <div class="tab-container">
+        <a href="about.html" class="tab">About</a>
+        <a href="kdnpcsv.html" class="tab active">Collections</a>
+        <a href="contribute.html" class="tab">Contribute</a>
+        <a href="resources.html" class="tab">Resources</a>
+    </div>
+    <div id="inline" class="lity-hide" style="max-height: 1009px;">
+<script>
+function process() {
+  const baseurl = 'https://sandbox01-na.primo.exlibrisgroup.com/discovery/';
+  const basescope = 'NEWS';
+  const basetab = 'Newspapers';
+  const issuedatefacet = 'lds06';
+
+  // Get trimmed values
+  const year = document.getElementById("year").value.trim();
+  const month = document.getElementById("month").value.trim();
+  const day = document.getElementById("day").value.trim();
+
+  const errorDiv = document.getElementById("error");
+  errorDiv.style.display = "none"; // hide any previous errors
+  errorDiv.innerHTML = "";
+
+  // Helper function to encode and redirect
+  function redirectTo(queryDate) {
+    const url = `${baseurl}search?query=${encodeURIComponent(issuedatefacet)},exact,${encodeURIComponent(queryDate)}&tab=${encodeURIComponent(basetab)}&search_scope=${encodeURIComponent(basescope)}&vid=01SAA_UKY:KDNP&offset=0&sortby=title`;
+    parent.location.href = url;
+  }
+
+  // Simple validation helpers
+  const isValidYear = year && /^\d{4}$/.test(year);
+  const isValidMonth = month && /^\d{1,2}$/.test(month) && parseInt(month) >= 1 && parseInt(month) <= 12;
+  const isValidDay = day && /^\d{1,2}$/.test(day) && parseInt(day) >= 1 && parseInt(day) <= 31;
+
+  // Apply logic based on inputs
+  if (isValidYear && isValidMonth && isValidDay) {
+    redirectTo(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+  } else if (isValidYear && isValidMonth) {
+    redirectTo(`${year}-${month.padStart(2, '0')}`);
+  } else if (isValidMonth && isValidDay) {
+    redirectTo(`-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+  } else if (isValidYear && isValidDay && !isValidMonth) {
+    errorDiv.style.display = "block";
+    errorDiv.innerHTML = "Invalid search: please supply a month.";
+  } else if (!isValidYear && !isValidMonth && isValidDay) {
+    errorDiv.style.display = "block";
+    errorDiv.innerHTML = "Invalid search: please supply a month or a month and year.";
+  } else if (isValidYear) {
+    redirectTo(`${year}-`);
+  } else {
+    errorDiv.style.display = "block";
+    errorDiv.innerHTML = "Invalid search: please provide at least a valid year or month.";
+  }
+
+  return false; // prevent form submission if used with <form onsubmit="return process();">
+}
+</script>
+    <p id="error"></p>
+    <h4>Search a Date (digital issues):</h4>
+    <form style="padding:10px;border-bottom: 2px solid #dee2e6;" target="_parent" onsubmit="return process();">
+      <span style="color:#fff;"></span> <input type="text" name="year" id="year" placeholder=" enter a year">
+        <span style="color:#fff;"></span>
+        <select name="month" id="month" style="padding:2.5px;">
+          <option value="" disabled="disabled" selected="selected">select month</option>
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <span style="color:#fff;"></span>
+        <select name="day" id="day" style="padding:2.5px;">
+          <option value="" disabled="disabled" selected="selected">select day</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        &nbsp;&nbsp;
+        <input type="submit" value="Search for Date" class="button-15" target="_parent">
+    </form>
+    <script>
+      function clrFunction() {
+        document.getElementById("error").style.display = "none"; ;
+      }
+      </script>
+    </div>  
+    <h4>Browse Digital Titles:</h4>
+    <br/>
+</div>
 <div id="table-container" style="max-width:100% !important;margin-left:auto;margin-right:auto;"></div>
 <!-- https://kentuckynewspapers.org/calendar.php?ttl=afr&yr=1900 -->
 <!-- county:  https://saalck-uky.primo.exlibrisgroup.com/discovery/search?query=lds03,exact,fayette,AND&tab=KDNP&search_scope=KDNP&sortby=rank&vid=01SAA_UKY:KDNP&lang=en&mode=advanced&offset=0 -->
 <script>
-function format_link(link){
-    if (link)
+const BASE_URL = 'https://sandbox01-na.primo.exlibrisgroup.com/discovery/';
+const BASE_SCOPE = 'NEWS';
+const BASE_TAB = 'Newspapers';
+const TITLE_FACET = 'lds18';
+const COUNTY_FACET = 'lds03';
+const CITY_FACET = 'lds05';
+const VID = '01SAA_UKY:KDNP';
+const COMMON_PARAMS = `tab=${BASE_TAB}&search_scope=${BASE_SCOPE}&vid=${VID}&facet=tlevel,include,online_resources&lang=en&offset=0&sortby=title`;
 
-    {let filteredLink = link.replace(/'/g, '%27').replace(/&/g, '%26amp%3B');
-
-      // return "<a href='https://saalck-uky.primo.exlibrisgroup.com/discovery/search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds33,include," + link + "&lang=en&offset=0' target='_parent'>" + link + "</a>";
-      return "<a href='https://sandbox01-na.primo.exlibrisgroup.com/discovery/search?query=any,contains,Newspaper%20Issue&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&facet=lds18,include," + filteredLink + "&lang=en&offset=0&sortby=title' target='_parent'>" + link + "</a>";}
-
-    else
-      return "";
-  }
-  
-  function format_link_num(link2){
-    if (link2)
-
-      return "<span>" + link2 + "</span>";
-      
-    else
-      return "";
-  }
-  
-    function format_link_county(link3){
-    if (link3)
-
-      // return "<a href='https://saalck-uky.primo.exlibrisgroup.com/discovery/search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds03,include," + link3 + "&lang=en&offset=0' target='_parent'>" + link3 + "</a>";
-      return "<a href='https://sandbox01-na.primo.exlibrisgroup.com/discovery/search?query=any,contains,Newspaper%20Issue&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&facet=lds03,include," + link3 + "&lang=en&offset=0&sortby=title' target='_parent'>" + link3 + "</a>";
-      
-    else
-      return "";
-  }
-  
-      function format_link_city(link4){
-    if (link4)
-
-      // return "<a href='https://saalck-uky.primo.exlibrisgroup.com/discovery/search?query=any,contains,Newspaper%20Issue&tab=KDNP&search_scope=KDNP&vid=01SAA_UKY:KDNP&facet=lds05,include," + link4 + "&lang=en&offset=0' target='_parent'>" + link4 + "</a>";
-      return "<a href='https://sandbox01-na.primo.exlibrisgroup.com/discovery/search?query=any,contains,Newspaper%20Issue&tab=Newspapers&search_scope=NEWS&vid=01SAA_UKY:KDNP&facet=lds05,include," + link4 + "&lang=en&offset=0&sortby=title' target='_parent'>" + link4 + "</a>";
-      
-    else
-      return "";
-  }
-
- function format_link_first(link5) {
-  if (link5) {
-    // Extract the last 10 characters as the date
-    let first_date = link5.slice(-10);
-
-    // Construct the formatted link
-    return `<span>${first_date}</span>`;
-  } else {
-    return "";
-  }
+/**
+ * Utility: Escapes special characters in HTML
+ */
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.appendChild(document.createTextNode(text));
+  return div.innerHTML;
 }
 
-
-function format_link_last(link6) {
-  if (link6) {
-    // Extract the last 10 characters as the date
-    let last_date = link6.slice(-10);
-
-    // Construct the formatted link
-    return `<span>${last_date}</span>`;
-  } else {
-    return "";
+/**
+ * Utility: Create search link
+ */
+function createSearchLink(queryField, queryValue, facetField = null, facetValue = null, displayText) {
+  const encodedValue = encodeURIComponent(queryValue);
+  let url = `${BASE_URL}search?query=${queryField},exact,${encodedValue}&${COMMON_PARAMS}`;
+  
+  if (facetField && facetValue) {
+    url += `&facet=${facetField},include,${encodeURIComponent(facetValue)}`;
   }
+
+  return `<a href="${url}" target="_parent">${escapeHtml(displayText)}</a>`;
 }
 
-      function format_link_cal(link7){
-    if (link7)
+// Formatters
+function formatTitleLink(value) {
+  if (!value) return '';
+  return createSearchLink(TITLE_FACET, value, TITLE_FACET, value, value);
+}
 
-      //return "<a href='https://kdnp.uky.edu/cal.php?id=" + link7[0] + link7[1] + link7[2] + link7[3] + link7[4] + link7[5] + link7[6] + "'><img src='../img/calendar_icon.gif' /></a>";
-      //return "<a href='https://kdnp.uky.edu/cals/html/"  + link7[0] + link7[1] + link7[2] + "/" + link7[0] + link7[1] + link7[2] + link7[3] + link7[4] + link7[5] + link7[6] + ".html'><img src='../img/calendar_icon.gif' /></a>";
-      return '';
-    else
-      return "";
-  }
+function formatCountyLink(value) {
+  if (!value) return '';
+  return createSearchLink(COUNTY_FACET, value, null, null, value);
+}
 
-  CsvToHtmlTable.init({
-    csv_path: 'csv/kdnp_titles.csv', 
-    element: 'table-container', 
-    allow_download: false,
-    csv_options: {separator: ',', delimiter: '"'},
-    datatables_options: {"paging": true, "searching": true},
-   custom_formatting: [
-                [0, format_link],
-                [1, format_link_cal],
-                [3, format_link_county],
-                [2, format_link_city],
-                [4, format_link_first],
-                [5, format_link_last],
-                [6, format_link_num]
-            ]
-  });
+function formatCityLink(value) {
+  if (!value) return '';
+  return createSearchLink(CITY_FACET, value, null, null, value);
+}
+
+function formatDate(value) {
+  return value ? `<span>${escapeHtml(value.slice(-10))}</span>` : '';
+}
+
+function formatNumber(value) {
+  return value ? `<span>${escapeHtml(value)}</span>` : '';
+}
+
+function formatEmpty() {
+  return '';
+}
+
+// Initialize table
+CsvToHtmlTable.init({
+  csv_path: 'csv/kdnp_titles.csv',
+  element: 'table-container',
+  allow_download: false,
+  csv_options: { separator: ',', delimiter: '"' },
+  datatables_options: { paging: true, searching: true },
+  custom_formatting: [
+    [0, formatTitleLink],
+    [1, formatEmpty],
+    [2, formatCityLink],
+    [3, formatCountyLink],
+    [4, formatDate],
+    [5, formatDate],
+    [6, formatNumber],
+  ]
+});
 </script>
+
 <style>
-#table-container-table_length { padding: 15px; }
-#table-container-table_info { padding: 15px; }
-#table-container > p { padding: 15px; }
-h3 { padding: 15px; }
-.pagination { float: left; }
-#table-container-table_wrapper > div:nth-of-type(3) {
-    padding: 25px;
-    border-top: 1px solid lightgray;
-} 
+    #table-container-table_length,
+    #table-container-table_info,
+    #table-container > p,
+    h3 {
+        padding: 15px;
+    }
+
+    .pagination {
+        float: left;
+    }
+
+    #table-container-table_wrapper > div:nth-of-type(3) {
+        padding: 25px;
+        border-top: 1px solid lightgray;
+    }
+
+    /* 
+    html > body > div > div > div:nth-of-type(2) > div > table > thead > tr > th:nth-of-type(2) {
+        color: #f3f3f3;
+    }
+    */
 </style>
-<style>/* html > body > div > div > div:nth-of-type(2) > div > table > thead > tr > th:nth-of-type(2) {color:#f3f3f3;} */</style>
+
 <p>&nbsp;</p>
-<!--<p>&nbsp;</p>
-<h4><a href="https://sandbox01-na.primo.exlibrisgroup.com/discovery/collectionDiscovery?vid=01SAA_UKY:KDNP&inst=01SAA_UKY&collectionId=8180219220002636&sortItemsBy=title" target="_parent">Browse Microfilmed Titles</a></h4>
-<br/>-->
+
 <!-- ky digital newspaper program web archives start -->
 <br/>
 <h4><a href="https://archive-it.org/collections/21644" target="_blank">Kentucky Digital Newspaper Program Web Archives</a></h4>
@@ -1832,7 +1839,7 @@ h3 { padding: 15px; }
 </ol>
 </div>
 </div>
-  <style>
+<style>
     .scrollable-div {
       width: 99%;
       height: 400px;
@@ -1845,20 +1852,16 @@ h3 { padding: 15px; }
       height: 400px;
     }
 
-  </style>
-
+</style>
 
 <!-- microfilm titles end -->
 
-
-
+<!-- county map start -->
 
 <div id="Map" class="tabcontent" style="max-width:100% !important;margin-left:auto;margin-right:auto;padding-top: 80px;">
 <section id="location_normal">            
 <h4>Search Digital Titles by Location:</h4>
 <p>&nbsp;</p>
-
-
 
 <div id="mapBox" >
 <svg version="1.1" id="Main" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -3359,8 +3362,7 @@ href="https://saalck-uky.primo.exlibrisgroup.com/discovery/search?query=any,cont
 </svg>
 </div>
 
-
-<p></p></section>
+<p>&nbsp;</p></section>
 </div>
 
 <style>
@@ -3446,7 +3448,6 @@ ul.cloud a:hover::before {
 }
 
 }
-
 
 @media (max-width: 576px) and (min-width: 377px) { .
 
@@ -3535,7 +3536,6 @@ table.dataTable td, table.dataTable th {
 
 }
 
-
 .page-item  {
     display: none;
 }
@@ -3568,7 +3568,6 @@ div.dataTables_wrapper div.dataTables_filter {
 #table-container-table_filter {
     padding-left: 20px;
 }
-
 
 .button-15 {
   background-image: linear-gradient(#42A1EC, #0070C9);
@@ -3620,8 +3619,6 @@ div.dataTables_wrapper div.dataTables_filter {
 #table-container-table > thead > tr > th:nth-of-type(2) {
   visibility: hidden;
 }
-
-
 
 
     .tab-container {
