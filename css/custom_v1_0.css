@@ -277,6 +277,14 @@ table.dataTable td, table.dataTable th {
   table.table.table-striped.table-condensed.dataTable.no-footer tr.odd td:not(:first-child) {
     display: none;
   }
+  
+  .tab-container, #mainContent {
+    font-size: 14px;
+  }
+  
+  .tab {
+    padding: 14px 11px;
+  }
 }
 
 @media (max-width: 576px) and (min-width: 377px),
