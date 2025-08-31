@@ -1,0 +1,325 @@
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+  font-size: 120%;
+}
+
+/* ===== Links ===== */
+a {
+  color: #3d6e94;
+  text-decoration: none;
+  background-color: transparent;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus {
+  outline: 2px solid #3d6e94;
+  outline-offset: 2px;
+}
+
+/* ===== Accessibility ===== */
+.sr-only,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== Skip Link ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== Tabs ===== */
+.tab-container {
+  display: flex;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #d0d0d0;
+  margin-bottom: 25px;
+}
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.tab:hover {
+  font-weight: 600;
+}
+.tab.active {
+  background-color: #f3f3f3;
+  font-weight: 700;
+  border-bottom: 1px solid;
+}
+
+/* ===== Table Container ===== */
+#table-container-table_length,
+#table-container-table_info,
+#table-container > p,
+h3 {
+  padding: 15px;
+}
+#table-container-table_info {
+  white-space: normal;
+  padding: 0 !important;
+  margin-bottom: 15px;
+  float: left;
+}
+#table-container-table_filter {
+  padding-left: 20px;
+}
+#table-container-table_wrapper > div:nth-of-type(1) > div:nth-of-type(1) {
+  display: none;
+}
+#table-container-table_wrapper > div:nth-of-type(3) {
+  padding: 25px;
+  border-top: 1px solid lightgray;
+  display: block;
+}
+#table-container-table > thead > tr > th:nth-of-type(2) {
+  visibility: hidden;
+}
+table.dataTable td, table.dataTable th {
+  box-sizing: border-box;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  float: left;
+}
+.page-item {
+  display: none;
+}
+.page-item.next,
+.page-item.previous {
+  display: block;
+}
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #3d6e94;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+/* ===== Scrollable Div ===== */
+.scrollable-div {
+  width: 99%;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+}
+.content {
+  height: 400px;
+}
+
+/* ===== Error Box ===== */
+#error {
+  background: #fcf4f2;
+  border: 1px solid #f9c9bf;
+  padding: 1em;
+  display: none;
+  color: #a51b00;
+}
+
+/* ===== Button Styles ===== */
+.button-15 {
+  margin-top: 10px;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.27;
+  padding: 2px 15px;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.button-15:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+.button-15:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+}
+.button-15:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+}
+.button-15:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+
+/* ===== County Map Styles ===== */
+.county1 { fill: #C8E9F3; stroke: #B4CCD3; stroke-width: 10; }
+.county2 { fill: #ADDCF4; stroke: #B4CCD3; stroke-width: 10; }
+.county3 { fill: #63ADDB; stroke: #B4CCD3; stroke-width: 10; }
+.county4 { fill: #80C5DD; stroke: #B4CCD3; stroke-width: 10; }
+.countyLabel {
+  font-size: 5em;
+  font-family: "Arial";
+  fill: black;
+}
+
+/* ===== Tag Cloud ===== */
+@media (min-width: 577px) {
+  ul.cloud {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    line-height: 2.75rem;
+  }
+
+  ul.cloud a {
+    --size: 4;
+    --color: #a33;
+    color: var(--color);
+    font-size: calc(var(--size) * 0.25rem + 0.5rem);
+    padding: 0.125rem 0.25rem;
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+
+  ul.cloud a[data-weight="1"] { --size: 1; }
+  ul.cloud a[data-weight="2"] { --size: 2; }
+  ul.cloud a[data-weight="3"] { --size: 3; }
+  ul.cloud a[data-weight="4"] { --size: 4; }
+  ul.cloud a[data-weight="5"] { --size: 6; }
+  ul.cloud a[data-weight="6"] { --size: 8; }
+  ul.cloud a[data-weight="7"] { --size: 10; }
+  ul.cloud a[data-weight="8"] { --size: 13; }
+  ul.cloud a[data-weight="9"] { --size: 16; }
+
+  ul[data-show-value] a::after {
+    content: " (" attr(data-weight) ")";
+    font-size: 1rem;
+  }
+
+  ul.cloud li:nth-child(2n+1) a { --color: #181; }
+  ul.cloud li:nth-child(3n+1) a { --color: #33a; }
+  ul.cloud li:nth-child(4n+1) a { --color: #c38; }
+
+  ul.cloud a:focus {
+    outline: 1px dashed;
+  }
+
+  ul.cloud a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background: var(--color);
+    transform: translate(-50%, 0);
+    opacity: 0.15;
+    transition: width 0.25s;
+  }
+
+  ul.cloud a:hover::before,
+  ul.cloud a:focus::before {
+    width: 100%;
+  }
+
+  @media (prefers-reduced-motion) {
+    ul.cloud * {
+      transition: none !important;
+    }
+  }
+}
+
+/* ===== Responsive Tables ===== */
+@media (max-width: 468px) {
+  table.table.table-striped.table-condensed.dataTable.no-footer tr.odd td:not(:first-child) {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) and (min-width: 377px),
+       (max-width: 376px) and (min-width: 200px) {
+  #Map,
+  #table-container-table > tbody > tr > td:nth-of-type(2) ~ td,
+  #table-container-table > tbody > tr > td:nth-of-type(3) ~ td,
+  #table-container-table > tbody > tr > td:nth-of-type(4) ~ td,
+  #table-container-table > thead > tr > th:nth-of-type(3),
+  #table-container-table > thead > tr > th:nth-of-type(4),
+  #table-container-table > thead > tr > th:nth-of-type(5) {
+    display: none !important;
+  }
+
+  ul.cloud,
+  #year {
+    display: block;
+  }
+
+  #month {
+    margin-top: 10px;
+  }
+
+  .cloud {
+    list-style: none;
+  }
+
+  .sorting_1 {
+    width: 320px;
+  }
+
+  .button-15 {
+    margin-top: 10px;
+  }
+
+  /* Optional responsive styles */
+  /* .pagination { display: block; } */
+}
+
+/* ===== DataTables Custom Filter Positioning ===== */
+div.dataTables_wrapper div.dataTables_filter {
+  text-align: left !important;
+}
+.col-md-7 {
+  float: right;
+}
